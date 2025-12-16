@@ -1,0 +1,52 @@
+AWS Module - 
+
+What is cloud computing
+What is iam --> how to create a user
+how to attach some permissions to the user
+how to login with the iam user
+how to install aws cli
+how to use aws cli
+
+What are roles in IAM -->
+for service to service restrictions and access, we use roles 
+1. attach it as a profile while creating the instance
+2. create the instance and then attach it from instance settings
+by default, when you create a role for an ec2 instance in iam, it automatically creates an instance profile with the same name
+Users are for humans to interact with the aws services
+
+
+What is a policy - 
+set of permissions for the aws users/roles / groups to be attached 
+policy can be defined in a json format
+or you can use console to attach permissions from the UI
+
+
+What is imperative and declarative??
+Imperative means something doing manual without a format or standard approach
+
+Declarative - using a code or a standard format is defined and that is used for execution
+
+aws organizations - 
+you can create multiple sub aws accounts -
+create and manage users and group permissions accross these accounts from a single
+
+
+Cloud trail / Audit trail Service - 
+To review the acitives that was done in the account
+
+
+aws cli - 
+command line tool from aws to connect to aws services 
+config - .aws/config or .aws/credentials
+environment ariables - AWS_PROFILE=s3readonly
+
+Task -
+create an instance
+create a role - ec2readonly policy
+attach the role to the ec2
+run aws cli command 
+
+to know which user or role the aws cli is using currently
+aws sts get-caller-identity
+ 
+
