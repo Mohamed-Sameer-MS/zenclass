@@ -1,0 +1,48 @@
+What is EC2?
+Elastic compute cloud is a service for creating and managing virtual machines in aws
+
+for any ec2 resource - 
+instance id - is the unique identifier for the instance
+ARN - unique identifier in aws account
+tags - Name: "value"
+
+Default storage service for ec2 - EBS
+Elastic Block storage
+
+user data  - (bootstrap script)
+we can run a bash script during the first startup/launch of the instance
+
+create an instance 
+
+in user data -
+
+#!/bin/bash
+mkdir /some
+useradd testuser
+chown -R testuser:testuser /some
+echo "$(date) -- current time of execution" > /tmp/logfile
+
+
+EBS -
+IOPS - metric to measure the performance of a volume
+Input Ouput per second
+
+General purpose SSD - gp3 (default), gp2
+
+some commands for storage - 
+df -hT - to check mounted partitions or file systems
+lsblk - list block devices
+
+
+file system types - xfs, ext2, ext4
+
+
+configuration file for storage mount - 
+/etc/fstab
+
+Task - 
+1. create an instance 
+2. create a volume, type gp2, size 3GB with name tag - Name: dummyvol
+3. attach that volume to the instance as secondary storage
+4. create a FS
+5. mount the volume to /mnt/data
