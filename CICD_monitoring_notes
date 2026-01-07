@@ -1,0 +1,213 @@
+What is CI CD ??
+
+Continuous integration and continuous deployment
+
+We build a pipeline
+
+We build the code
+
+Deploy the code
+We automate it
+
+We use plugins for integration
+
+Automatically deploy enhancements 
+
+
+What is SDLC ??
+Software Development Lifecycle
+
+From the time the software is developed till it reaches the client / customer 
+
+Building the packages - build steps
+
+Archiving or packaging the complete code/program
+
+For eg - 
+Windows based applications are developed using .Net
+
+I get a file called as .exe or .msi
+
+Mostly packages are —
+Java - jar
+Nodejs - tar file with xml
+.net - .exe or .msi
+
+
+Monolithic vs micro service ??
+
+Big code broken into pieces - 
+
+Shell process - 
+
+Su - ubuntu —> creates a shell (process id 101) 
+ — run dd command in bg 102
+ — run vi 
+  — nodes app
+ — run bash 104
+
+Flipkart - jar (single jar)
+ — homepage
+ — categories
+ — cart
+ — payment
+ — orders
+ — login
+
+Monolithic means —> in one single code base, it has all the features -> if something goes wrong, whole application will be down, in case of a patching or a new feature release, you have to build the complete package
+Eg - for small organization with less customer base 
+It is tightly coupled with each other 
+
+Microservice 
+It is not tightly coupled with each other , 
+Flipkart  —>
+ — homepage - war
+ — categories - jar
+ — cart - .net
+ — payment - nodes
+ — orders - python
+ — login - jar
+
+
+SDLC 
+
+Feature or requirement or new enhancement
+Architecture ,Code base will be decided
+Code will be developed
+Code is scanned (integrity, syntax errors, code quality checks, etc)
+Code is built
+Tested
+Deployed to the actual server from where the client can access
+Monitor 
+
+
+Waterfall 
+Agile 
+
+Creating tickets tasks —> epic, feature, user story, task where it will be planned execution
+Quarter - once in 3 months - Fiscal/financial Year FY, 4 quarters , 
+Season planning 
+
+
+Under agile - devops model, create a bug —> 
+
+Feature request —> create a feature in the board with all the details —> assigned to dev —> send for approval to test and deploy —> testing —> deployed —> monitored —> deployed to staging env —> deployed to production env
+Conitunous integration and continously deployed 
+
+
+
+Code - source code 
+
+Local machine - developers own system —> laptop or a desktop
+ —> dev / integration environment (aws ec2, VMware )
+Servers for applications, for database, for middleware , etc
+—> staging / sandbox environment, (production grade replica / clone)
+—> production environment	
+
+SCm - source code management , Version control systems
+GIT - command or package used
+Eg - GitHub, gitlab, bitbucket, azure devops, etc
+Main or master branch 
+
+CircleCI, etc
+
+Jenkins - automation tool
+
+Once the code is build to a jar or war or .exe file or tar file, this is a build artifact 
+Artifacts are not uploaded usually to the same repository, it will be uploaded to artifactory tools like jfrog, nexus, etc
+
+
+GitHub —> aws codecommit
+Jenkins pipeline —> aws code pipeline 
+To build a package , Jenkins (maven) —> aws code build 
+Artifacts - nexus, jfrog —> aww code artifacts
+
+
+Azure - azure devops
+
+
+Cloudwatch - 
+It is used for monitoring all the aws resources , it has metrics, events , logs , alarms and dashboards.
+
+
+Metrics - 
+Eg - cpu, mem/RAM, storage, network in/out, disk IOPS, rate, latencies, etc
+
+
+Events —>
+Status, health checks, messages, reasons, ,etc - events
+
+Logs - 
+Detailed information about the system or raw information 
+
+Alarms - 
+Monitors
+Sitting a threshold and triggering an alarm 
+For eg - monitor the RAM/MEM usage , it should not go above 75 percent, for last 5 mins, periodically check
+
+Native - cpu usage, disk usage, network usage, etc
+Custom metrics - no of processes run by user ubuntu , command
+
+
+1 physical serve in aws - 100 VMs (cpu will be dedicated)
+For eg - second VM —> 1 core, 1 GB Memory, 
+From the above, 1 core will be allocated from physical server, the 1 GB is elastic, 300 MB of utilization, only that much will be occupied from the physical server, 
+
+What is SNS - 
+Its a simple notification service
+, concept - pub/sub
+Publishing / subscribing 
+Cloud watch will publish a value or a message to SNS
+We will subscribe to sns topic like CPU alarm, we will receive the notification
+
+Recipients - whom the notification should be sent - subscribers
+Topic - cloud watch or other service can publish their message to a topic in SNS
+
+
+
+
+Async - 
+SNS - more of a FIFO
+U send the message and forget it
+Someone will subscribe and receive the message
+
+
+SQS - Sync way
+Simple queue service 
+
+If u have micro services, from one service to another service it can send some messages and things to process 
+For eg - in flipkart, the cart page can send for processing if order is placed to order service , 3 replicas, 
+To manage the messaging, we use messaging queues, —> Producers and consumers
+
+Eg - SQS , apache ActiveMQ,, Kafka 
+Install and configure kafka, dev will tell who is the producer and consumer and they will configure it
+
+
+
+Monitoring tools and alternatives - 
+Cloud watch - only aws and aws related resources
+Nagios, icinga, zabbix, prometheus
+
+The above are for infra monitoring
+For backend applications, you can monitor the thread usage , latency, requests coming to and from other apps, correlation, logs 
+Application Performance Monitoring - APM 
+
+For web application or browser based applications — Real user monitoring  (RUM) or synthetic monitoring
+
+URL based monitoring - uptime monitoring
+
+Logs - logs monitoring
+
+Observability stack- all infra, APM, logs, synthetics etc monitoring under one tool for correlation 
+Eg - New Relic, Datadog, Splunk, ELK, Dynatrace etc
+Free ones - Elastic (ELK), prometheus Grafana
+
+SRE- Create SLA, SLO/SLI , MTTR , etc
+
+
+
+
+
+
+
+
