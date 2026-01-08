@@ -1,0 +1,39 @@
+What is VCS??
+Version Control system
+
+1./ create a file --> update the contents of the file --> save and quit --> version 1 
+2. open the file --> update the contents again --> save and quit --> version 2
+
+
+Examples for Remote Repositiories for source code management -->
+1. Github
+2. Gitlab
+3. Bitbucket
+4. Azure Devops 
+5. AWS CodeCommit
+
+
+Local Laptop / Desktop --> Git operations
+
+Initialize a folder as a git repository - git init
+To check the status of the git repo - git status
+
+history f commands used -->
+
+git init
+git --version
+git commit -am "adding and commiting changes"
+git config --global user.name "Anonymous"
+git config --global user.email "Anonymous@gmail.com"
+git add .\myfile.txt
+git commit -m "i have uploaded a new file"
+git clone https://github.com/alfathih/test.git
+git checkout -b testbranch
+git push origin testbranch
+git status
+git diff
+git diff  --staged
+git branch
+git checkout feature1
+git log
+git config --list
