@@ -1,4 +1,4 @@
-
+https://github.com/Gopi1892/Devops-Learning-Material.git
 K8s Architecture
 
 Distroless Image or light weight image
@@ -70,7 +70,116 @@ Type: NodePort
 Ports:
 port:80
 targetPort: 8080
+
 nodePort: 30007
+
+
+PV and PVC
+
+Persistent Volume and Persistent Volume Claim
+
+Pod 1 — 25GB of disk space — PV —--- PVC
+Pod 2 –  10 GB of space —- PV
+Pod 3 — 35 Gb of space —- PV
+Pod 4 —  30 GB of space —- PV
+
+Disk Space
+
+Pod 1 need 60gb of disk space
+
+
+PV1—--PVC1 —-- data
+
+PV2—-PVC2—--data
+
+Health Probes
+
+Health Probes
+
+It will tell k8s whether a container is healthy and ready to receive the traffic
+
+K8s will use them to
+Restart crashed containers
+Stop sending traffic to unhealthy pods
+Decide the status of a pod 
+
+Liveness
+Readiness
+Startup Probe
+
+Liveness Probe will check if the app is stucked or in a crashed state
+
+Readiness Probe
+Check if app can handle requests
+
+Startup Probe
+
+PDB —- Pod disruption budget
+
+Kubernetes taint and toleration
+
+
+Taint —- applied on a particular node
+Tolerations —- applied on a pod
+
+Taint to that particular Node 
+Toleration for that node
  
+
+
+Deployment Stratergies
+
+
+A deployment Strategy in k8s is used to define how you will deploy an application in k8s
+
+Goal
+Zero or minimal downtime
+Safe Rollout
+Easily Rollback
+
+
+Deployment Stratergies in k8s
+
+Rolling Update —- Default
+Recreate 
+Blue-Green Deployment
+Canary Deployment
+A/B Testing (Traffic - based)
+
+Rolling Update
+Pods are updated gradually, not at once
+
+Strategy:
+  Type: RollingUpdate
+  rollingUpdate:
+	maxSurge: 1
+	maxUnavailable: 0
+Standard Web Applications
+Microservices
+Zero downtime
+
+
+Recreate Startergy
+
+Kills all old PODS, then it will start a new one.
+
+Strategy:
+	Type:recreate
+
+App cannot run multiple version
+DB migrations
+Legacy application
+
+Blue Green Deployment
+
+Service is running in Blue
+Deploy is running in green
+
+Switch the service
+
+Zero downtime
+Instant Rollback
+
+Canary Deployment
 
 
