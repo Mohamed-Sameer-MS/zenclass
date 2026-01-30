@@ -1,0 +1,76 @@
+
+K8s Architecture
+
+Distroless Image or light weight image
+Never run as admin or root use
+Use multistage docker build
+Use container scanning tools for vulnerabilities
+
+K8s Architecture
+
+Pods Deployment Stateful Set and Daemon Set
+
+Pods and Deployment
+
+Pods - Smallest unit inside k8s
+One pods = one container or you can have multiple container inside one pod
+
+K8s is different 
+Automatation of Autoscaling  —- 
+Self HEaling nature of k8s —-- deployment
+
+Deployment 
+Autoscaling features as well as self healing nature of k8s
+
+Deployment
+Pods —- Nginx application  —-- data —- lost —- PV and PVC in k8s
+1,2,3,4,5
+Stateful Set —- PV and PVC associated with it
+Replicas of Database —- 
+
+Pod
+Deployment
+Stateful Set
+Daemon Set 
+
+
+
+Daemon Set — Monitoring
+
+
+K8s Service Type
+
+Cluster IP services
+
+Internally inside the cluster
+Not accessible from outside
+Best used for internal/backend microservices
+
+apps/v1 – Replica Set will make sure on what is the desired state to be maintained maintained and replica controller will maintain the desired state
+
+
+
+
+Cluster IP service — 
+Node Port service —- local network http://<NodeIP>:30007
+Acess externally using Port no
+Mostly used for testing/ demo
+
+Load Balancer
+ Create an external load balancer 
+Automatically route the traffic to your pods
+
+Every Node you need to have a load balancer
+
+Ingress is not a service but it is a smart routing method
+One Load balancer
+Then you can use it different node using path based or URL based routing
+
+Type: NodePort
+Ports:
+port:80
+targetPort: 8080
+nodePort: 30007
+ 
+
+
